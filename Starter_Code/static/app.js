@@ -12,6 +12,7 @@ window.onload = function(e) {
         var peopleIDS       = sample.names; 
         var people          = sample.metadata;
         var sampleResults   = sample.samples;
+        // var gaugeValues     = sample.metadata; 
 
         // Set default dropdown text.
         var defaultOption   = document.createElement('option');
@@ -80,7 +81,90 @@ window.onload = function(e) {
               }); 
             }
           });
+          // Scan for the person sample restults selected and display a bar chart.
+          sampleResults.forEach(function(sample){
+            
+            if (id == sample.id) {
 
+              Object.entries(sample).forEach(function([key, value]){
+
+                // Display bar chart of belly button bacteria.
+                var x_axis    = sample.sample_values.slice(0,10);
+                var y_axis    = sample.otu_ids.slice(0,10);
+                var barHover  = sample.otu_labels.slice(0,10);
+
+                var bar = {
+                  type: 'bar',
+                  x: x_axis,
+                  y: y_axis,
+                  hovertext: barHover, 
+                  orientation: 'h'
+                  };
+
+                var layout = {
+                  title: "Bar Chart"};
+
+                Plotly.newPlot("bar", [bar], layout);   
+              }); 
+            }
+          });
+          // Scan for the person sample restults selected and display a pie chart.
+          sampleResults.forEach(function(sample){
+  
+            if (id == sample.id) {
+
+              Object.entries(sample).forEach(function([key, value]){
+
+                // Display pie chart of belly button bacteria.
+                var pieValues   = sample.sample_values.slice(0,10);
+                var pieLables   = sample.otu_ids.slice(0,10);
+                var pieHover    = sample.otu_labels.slice(0,10);
+
+
+                var pie = {
+                  labels: pieValues,
+                  values: pieLables,
+                  hovertext: pieHover,
+                  type: 'pie'
+                };
+
+                var layout = {
+                  title: "Pie Chart"};
+
+                Plotly.newPlot("pie", [pie], layout);   
+              }); 
+            }
+          });
+          // Scan for the person sample restults selected and display a gauge chart.
+          // sampleResults.forEach(function(sample){
+  
+          //   if (id == sample.id) {
+
+          //     Object.entries(sample).forEach(function([key, value]){
+
+          //       // Display gauge chart of weekly washing.
+          //       var gaugeValues   = people.wfreq
+          //       var gaugeLables   = 
+          //       var gaugeHover    = 
+
+
+          //       var gauge = {
+          //         labels: pieValues,
+          //         values: pieLables,
+          //         hovertext: pieHover,
+          //         type: 'pie'
+          //       };
+
+          //       var layout = {
+          //         title: "Gauge Chart - Weekly Washings"};
+
+          //       Plotly.newPlot("gauge", [gauge], layout);   
+          //     }); 
+          //   }
+          // });          
         });
       });
   }
+
+
+  // i created it - mark told us to say that 

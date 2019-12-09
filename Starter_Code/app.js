@@ -2,7 +2,7 @@
 window.onload = function(e) {
     
     // using d3 to call data from samples.json file. 
-    d3.json("samples.json").then((sample) => {
+    d3.json("Starter_Code/samples.json").then((sample) => {
 
         // html elements
         var personDiv       = d3.select("#sample-metadata"); 

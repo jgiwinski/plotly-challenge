@@ -12,7 +12,7 @@ window.onload = function(e) {
         var peopleIDS       = sample.names; 
         var people          = sample.metadata;
         var sampleResults   = sample.samples;
-        // var gaugeValues     = sample.metadata; 
+
 
         // Set default dropdown text.
         var defaultOption   = document.createElement('option');
@@ -135,36 +135,9 @@ window.onload = function(e) {
               }); 
             }
           });
-          // Scan for the person sample restults selected and display a gauge chart.
-          // sampleResults.forEach(function(sample){
-  
-          //   if (id == sample.id) {
-
-          //     Object.entries(sample).forEach(function([key, value]){
-
-          //       // Display gauge chart of weekly washing.
-          //       var gaugeValues   = people.wfreq
-          //       var gaugeLables   = 
-          //       var gaugeHover    = 
-
-
-          //       var gauge = {
-          //         labels: pieValues,
-          //         values: pieLables,
-          //         hovertext: pieHover,
-          //         type: 'pie'
-          //       };
-
-          //       var layout = {
-          //         title: "Gauge Chart - Weekly Washings"};
-
-          //       Plotly.newPlot("gauge", [gauge], layout);   
-          //     }); 
-          //   }
-          // });          
         });
       });
   }
 
 
-  // i created it - mark told us to say that 
+  // "i created it" - mark told us to say that when it was our og beautiful code we made. 
